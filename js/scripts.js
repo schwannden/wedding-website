@@ -95,15 +95,6 @@ $(document).ready(function () {
                     "border-bottom": "none",
                     "padding": "20px 0"
                 });
-                $('header .member-actions').css({
-                    "top": "15px",
-                });
-                $('header li a').css({
-                    "color": "#fff",
-                });
-                $('header .navicon').css({
-                    "top": "15px",
-                });
                 $('header .logo img')[0].src = "img/logo-light.png"
             } else {
                 $('section.navigation').removeClass('fixed');
@@ -144,7 +135,10 @@ $(document).ready(function () {
 
     });
     $(function () {
-        new Splide( '#image-carousel' ).mount();
+        new Splide( '#image-carousel', {
+            autoplay: true,
+            lazyLoad: 'nearby',
+        } ).mount();
     });
 });
 
