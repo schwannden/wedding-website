@@ -12,6 +12,10 @@
 /* ==========================================================================
 Global Styles
 ========================================================================== */
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 67px 0px; // preventing header from obscuring it
+}
 .group:after {
   content: "";
   display: table;
@@ -32,7 +36,8 @@ a {
   -webkit-transition-property: color, border-color, background-color;
   transition-property: color, border-color, background-color;
 }
-a:hover, a:focus {
+a:hover,
+a:focus {
   color: $accent-color-hover;
   text-decoration: none;
 }
@@ -46,7 +51,8 @@ body {
 *:focus {
   outline: none !important;
 }
-ul, ol {
+ul,
+ol {
   margin: 0;
   padding: 0;
 }
@@ -76,7 +82,7 @@ section .header {
 }
 .tooltip.in {
   filter: alpha(opacity=90);
-  opacity: .9;
+  opacity: 0.9;
 }
 .tooltip.top {
   padding: 5px 0;
@@ -106,7 +112,7 @@ section .header {
 }
 
 .intro dd::before {
-    content: "-";
+  content: "-";
 }
 
 /* ==========================================================================
@@ -137,13 +143,13 @@ Animations
 }
 @keyframes floating-arrow {
   from {
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
   }
   65% {
-    transform: translate(-50%, 15px)
+    transform: translate(-50%, 15px);
   }
   to {
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
   }
 }
 .floating-logo {
@@ -154,28 +160,45 @@ Animations
 }
 @keyframes floating-logo {
   from {
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
   }
   50% {
-    transform: translate(-50%, 10px)
+    transform: translate(-50%, 10px);
   }
   to {
-    transform: translate(-50%, 0)
+    transform: translate(-50%, 0);
   }
 }
 
 /* ==========================================================================
 Waypoinsts
 ========================================================================== */
-.wp1, .wp2, .wp3, .wp4, .wp5, .wp6, .wp7, .wp8, .wp9 {
-  visibility: hidden
+.wp1,
+.wp2,
+.wp3,
+.wp4,
+.wp5,
+.wp6,
+.wp7,
+.wp8,
+.wp9 {
+  visibility: hidden;
 }
-.wp8, .wp9 {
+.wp8,
+.wp9 {
   -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s
+  animation-delay: 0.3s;
 }
-.bounceInLeft, .bounceInRight, .fadeInUp, .fadeInUpDelay, .fadeInDown, .fadeInUpD, .fadeInLeft, .fadeInRight, .bounceInDown {
-  visibility: visible
+.bounceInLeft,
+.bounceInRight,
+.fadeInUp,
+.fadeInUpDelay,
+.fadeInDown,
+.fadeInUpD,
+.fadeInLeft,
+.fadeInRight,
+.bounceInDown {
+  visibility: visible;
 }
 
 /* ==========================================================================
@@ -193,12 +216,14 @@ Navigation
   right: 15px;
   z-index: 999999;
   padding: 10px 35px 16px 0;
-  cursor: pointer
+  cursor: pointer;
 }
 .nav-toggle:focus {
-  outline: none
+  outline: none;
 }
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
   content: "";
   position: absolute;
   display: block;
@@ -208,32 +233,35 @@ Navigation
   -webkit-border-radius: 1px;
   border-radius: 1px;
   background: #fff;
-  cursor: pointer
+  cursor: pointer;
 }
 .nav-toggle span:before {
-  top: -10px
+  top: -10px;
 }
 .nav-toggle span:after {
-  bottom: -10px
+  bottom: -10px;
 }
-.nav-toggle span, .nav-toggle span:before, .nav-toggle span:after {
+.nav-toggle span,
+.nav-toggle span:before,
+.nav-toggle span:after {
   -moz-transition: all 300ms ease-in-out;
   -o-transition: all 300ms ease-in-out;
   -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out
+  transition: all 300ms ease-in-out;
 }
 .nav-toggle.active span {
-  background-color: transparent
+  background-color: transparent;
 }
-.nav-toggle.active span:before, .nav-toggle.active span:after {
-  top: 0
+.nav-toggle.active span:before,
+.nav-toggle.active span:after {
+  top: 0;
 }
 .nav-toggle.active span:before {
   -moz-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg)
+  transform: rotate(45deg);
 }
 .nav-toggle.active span:after {
   top: 10px;
@@ -241,7 +269,7 @@ Navigation
   -ms-transform: translatey(-10px) rotate(-45deg);
   -o-transform: translatey(-10px) rotate(-45deg);
   -webkit-transform: translatey(-10px) rotate(-45deg);
-  transform: translatey(-10px) rotate(-45deg)
+  transform: translatey(-10px) rotate(-45deg);
 }
 .navicon {
   position: absolute;
@@ -301,7 +329,7 @@ Hero
 }
 .fixed {
   position: fixed;
-  background-color: rgba(55, 36, 40, .88);
+  background-color: rgba(55, 36, 40, 0.88);
   z-index: 999;
   width: 100%;
 }
@@ -401,7 +429,8 @@ Intro
 .intro img {
   width: 100%;
 }
-.intro p,h3 {
+.intro p,
+h3 {
   text-align: center;
 }
 
@@ -416,7 +445,7 @@ Intro
 Albumn Slider
 ========================================================================== */
 
-@media screen and (min-width:860px) {
+@media screen and (min-width: 860px) {
   .splide__slide img {
     width: 84%;
     height: auto;
@@ -424,7 +453,7 @@ Albumn Slider
     position: inherit;
   }
 }
-@media screen and (max-width:860px) {
+@media screen and (max-width: 860px) {
   .splide__slide img {
     width: 100%;
     height: auto;
@@ -463,11 +492,11 @@ footer {
   }
   .to-top-wrapper .to-top {
     display: block;
-    -webkit-transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -ms-transition: all .3s ease-in-out;
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   .to-top-wrapper .to-top:hover {
     margin-top: -5px;
@@ -483,8 +512,8 @@ footer {
 Bootstrap override
 ========================================================================== */
 body.modal-open {
-  padding-right:0 !important;
+  padding-right: 0 !important;
 }
 .modal-body {
-  padding:25px;
+  padding: 25px;
 }

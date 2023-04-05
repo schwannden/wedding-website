@@ -11,7 +11,7 @@ function navStyle(scroll) {
         if (original_src.includes("dark")) {
             $('header .logo img')[0].src = "img/logo-light.png";
         }
-        if (window.innerWidth <= 991) {
+        if (window.innerWidth < 991) {
             $('.header-nav.open').css({
                 "background-color": "rgba(55,36,40,.88)",
             });
@@ -27,7 +27,7 @@ function navStyle(scroll) {
         if (original_src.includes("light")) {
             $('header .logo img')[0].src = "img/logo-dark.png";
         }
-        if (window.innerWidth <= 991) {
+        if (window.innerWidth < 991) {
             $('.header-nav.open').css({
                 "background-color": "#fffc",
             });
@@ -112,24 +112,7 @@ $(document).ready(function () {
             navStyle(scroll);
         });
     });
-    /***************** Smooth Scrolling ******************/
-
-
-    $(function () {        
-        $('a[href*=#]:not([href=#])').click(function (e) {
-            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-                e.preventDefault();
-                var element = document.querySelector(this.hash);
-                var navHeight = document.querySelector('.navigation').offsetHeight || 0;
-                var topPos = element.getBoundingClientRect().top + window.pageYOffset
-                window.scrollTo({
-                    top: topPos - navHeight, // scroll so that the element is at the top of the view
-                    behavior: 'smooth' // smooth scroll
-                })
-            }
-        });
-
-    });
+    
     $(function () {
         new Splide( '#image-carousel', {
             type: "loop",
