@@ -1,3 +1,36 @@
+function navStyle(scroll) {
+    var original_src = $('header .logo img')[0].src
+    if (scroll >= 20) {
+        $('section.navigation').addClass('fixed');
+        $('header li a').css({
+            "color": "#fff",
+        });
+        $('.member-actions a').css({
+            "background-color": "#fff0",
+        });
+        if (original_src.includes("dark")) {
+            $('header .logo img')[0].src = "img/logo-light.png";
+        }
+        $('.header-nav.open').css({
+            "background-color": "#373737",
+        })
+    } else {
+        $('section.navigation').removeClass('fixed');
+        $('header li a').css({
+            "color": "#5f4a24",
+        });
+        $('.member-actions a').css({
+            "background-color": "#ffffff8c",
+        });
+        if (original_src.includes("light")) {
+            $('header .logo img')[0].src = "img/logo-dark.png";
+        }
+        $('.header-nav.open').css({
+            "background-color": "#fffc",
+        })
+    }
+}
+
 $(document).ready(function () {
 
     /***************** Waypoints ******************/
@@ -57,13 +90,14 @@ $(document).ready(function () {
     $('.nav-toggle').click(function () {
         $(this).toggleClass('active');
         $('.header-nav').toggleClass('open');
+        var scroll = $(window).scrollTop();
+        navStyle(scroll);
         event.preventDefault();
     });
     /* When user clicks a link */
     $('.header-nav li a').click(function () {
         $('.nav-toggle').toggleClass('active');
         $('.header-nav').toggleClass('open');
-
     });
 
     /***************** Header BG Scroll ******************/
@@ -71,31 +105,7 @@ $(document).ready(function () {
     $(function () {
         $(window).scroll(function () {
             var scroll = $(window).scrollTop();
-
-            if (scroll >= 20) {
-                $('section.navigation').addClass('fixed');
-                $('header').css({
-                    "border-bottom": "none",
-                    "padding": "20px 0"
-                });
-                $('header .logo img')[0].src = "img/logo-light.png"
-            } else {
-                $('section.navigation').removeClass('fixed');
-                $('header').css({
-                    "border-bottom": "solid 1px rgba(255, 255, 255, 0.2)",
-                    "padding": "20px 0"
-                });
-                $('header li a').css({
-                    "color": "#5f4a24",
-                });
-                $('header .member-actions').css({
-                    "top": "15px",
-                });
-                $('header .navicon').css({
-                    "top": "15px",
-                });
-                $('header .logo img')[0].src = "img/logo-dark.png"
-            }
+            navStyle(scroll);
         });
     });
     /***************** Smooth Scrolling ******************/
@@ -109,7 +119,7 @@ $(document).ready(function () {
                 target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                 if (target.length) {
                     $('html,body').animate({
-                        scrollTop: target.offset().top - 90
+                        scrollTop: target.offset().top - 70
                     }, 2000);
                     return false;
                 }

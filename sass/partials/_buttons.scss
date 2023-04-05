@@ -17,13 +17,14 @@
 	background-color: $accent-color;
 }
 .btn-white {
+	background-color: #ffffff8c;
 	font-size: 13px;
 	border: solid 2px;
 	-moz-border-radius: 40px;
 	-webkit-border-radius: 40px;
 	border-radius: 40px;
 	display: inline-block;
-	border-color: $txt-light;
+	border-color: $txt-dark;
 }
 .btn-white:hover, .btn-white:focus {
 	color: $accent-color;
@@ -31,13 +32,13 @@
 }
 .btn-fill {
 	color: $white-color;
-	border: solid 2px $accent-color;
+	border: solid 2px $txt-dark;
 	-moz-border-radius: 40px;
 	-webkit-border-radius: 40px;
 	border-radius: 40px;
 	display: inline-block;
 	text-transform: uppercase;
-	background-color: $accent-color;
+	background-color: $txt-dark;
 }
 .btn-fill:hover, .btn-fill:focus {
 	color: $white-color;
