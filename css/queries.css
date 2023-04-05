@@ -216,29 +216,6 @@
         margin-top: 0;
     }
 
-    .events .leftcol {
-        padding: 0 15px;
-        margin-bottom: 15px;
-        border-right: none;
-    }
-
-    .events .rightcol {
-        padding: 0 20px;
-    }
-    
-    #eng-pics .img-wrap {
-        border-radius: 0;
-    }
-
-    #map-content-wrapper {
-        margin-bottom: 40px;
-    }
-    
-    #map-content {
-        margin-top: 0;
-        padding: 35px;
-    }
-
     .rsvp {
         padding-top: 40px;
     }

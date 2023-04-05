@@ -547,24 +547,9 @@ Features-stack
 }
 
 /* ==========================================================================
-.events
+.stories
 ========================================================================== */
-.events {
-  .leftcol {
-    padding-right: 100px;
-    border-right: solid 1px $keyline-color;
-  }
-  .rightcol {
-    padding-left: 100px;
-  }
-
-  .time {
-    font-size: 13px;
-    font-style: italic;
-    text-transform: lowercase;
-    color: $txt-primary;
-  }
-
+.stories {
   text-align: center;
 }
 
@@ -574,9 +559,9 @@ Albumn Slider
 
 @media screen and (min-width:860px) {
   .splide__slide img {
-    width: 34%;
+    width: 84%;
     height: auto;
-    left: 32%;
+    left: 8%;
     position: inherit;
   }
 }
