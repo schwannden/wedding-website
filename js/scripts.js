@@ -1,5 +1,5 @@
 function navStyle(scroll) {
-    var original_src = $('header .logo img')[0].src
+    var original_src = $('header .logo img')[0].src;
     if (scroll >= 20) {
         $('section.navigation').addClass('fixed');
         $('header li a').css({
@@ -14,7 +14,7 @@ function navStyle(scroll) {
         if (window.innerWidth <= 991) {
             $('.header-nav.open').css({
                 "background-color": "rgba(55,36,40,.88)",
-            })
+            });
         }
     } else {
         $('section.navigation').removeClass('fixed');
@@ -27,9 +27,11 @@ function navStyle(scroll) {
         if (original_src.includes("light")) {
             $('header .logo img')[0].src = "img/logo-dark.png";
         }
-        $('.header-nav.open').css({
-            "background-color": "#fffc",
-        })
+        if (window.innerWidth <= 991) {
+            $('.header-nav.open').css({
+                "background-color": "#fffc",
+            });
+        }
     }
 }
 
