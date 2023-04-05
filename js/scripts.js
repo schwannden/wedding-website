@@ -119,9 +119,9 @@ $(document).ready(function () {
         $('a[href*=#]:not([href=#])').click(function (e) {
             if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
                 e.preventDefault();
-                const element = document.querySelector(this.hash);
-                const navHeight = document.querySelector('.navigation')?.offsetHeight || 0;
-                const topPos = element.getBoundingClientRect().top + window.pageYOffset
+                var element = document.querySelector(this.hash);
+                var navHeight = document.querySelector('.navigation').offsetHeight || 0;
+                var topPos = element.getBoundingClientRect().top + window.pageYOffset
                 window.scrollTo({
                     top: topPos - navHeight, // scroll so that the element is at the top of the view
                     behavior: 'smooth' // smooth scroll
