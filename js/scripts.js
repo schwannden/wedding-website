@@ -48,11 +48,6 @@ $(document).ready(function () {
         offset: '75%'
     });
 
-    /***************** Initiate Flexslider ******************/
-    $('.flexslider').flexslider({
-        animation: "slide"
-    });
-
     /***************** Tooltips ******************/
     $('[data-toggle="tooltip"]').tooltip();
 
