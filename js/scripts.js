@@ -114,19 +114,18 @@ $(document).ready(function () {
     });
     /***************** Smooth Scrolling ******************/
 
-    $(function () {
 
-        $('a[href*=#]:not([href=#])').click(function () {
+    $(function () {        
+        $('a[href*=#]:not([href=#])').click(function (e) {
             if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-
-                var target = $(this.hash);
-                target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-                if (target.length) {
-                    $('html,body').animate({
-                        scrollTop: target.offset().top - 70
-                    }, 2000);
-                    return false;
-                }
+                e.preventDefault();
+                const element = document.querySelector(this.hash);
+                const navHeight = document.querySelector('.navigation')?.offsetHeight || 0;
+                const topPos = element.getBoundingClientRect().top + window.pageYOffset
+                window.scrollTo({
+                    top: topPos - navHeight, // scroll so that the element is at the top of the view
+                    behavior: 'smooth' // smooth scroll
+                })
             }
         });
 
