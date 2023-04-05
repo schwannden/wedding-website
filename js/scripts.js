@@ -131,7 +131,7 @@ $(document).ready(function () {
         new Splide( '#image-carousel', {
             type: "loop",
             autoplay: true,
-            lazyLoad: 'nearby',
+            lazyLoad: 'sequential',
             perPage    : 3,
             breakpoints: {
                 860: {
