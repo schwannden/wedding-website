@@ -11,9 +11,11 @@ function navStyle(scroll) {
         if (original_src.includes("dark")) {
             $('header .logo img')[0].src = "img/logo-light.png";
         }
-        $('.header-nav.open').css({
-            "background-color": "#373737",
-        })
+        if (window.innerWidth <= 991) {
+            $('.header-nav.open').css({
+                "background-color": "rgba(55,36,40,.88)",
+            })
+        }
     } else {
         $('section.navigation').removeClass('fixed');
         $('header li a').css({
