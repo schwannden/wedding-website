@@ -112,24 +112,6 @@ $(document).ready(function () {
             navStyle(scroll);
         });
     });
-    /***************** Smooth Scrolling ******************/
-
-
-    $(function () {        
-        $('a[href*=#]:not([href=#])').click(function (e) {
-            if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-                e.preventDefault();
-                var element = document.querySelector(this.hash);
-                var navHeight = document.querySelector('.navigation').offsetHeight || 0;
-                var topPos = element.getBoundingClientRect().top + window.pageYOffset
-                window.scrollTo({
-                    top: topPos - navHeight, // scroll so that the element is at the top of the view
-                    behavior: 'smooth' // smooth scroll
-                })
-            }
-        });
-
-    });
     $(function () {
         new Splide( '#image-carousel', {
             type: "loop",
